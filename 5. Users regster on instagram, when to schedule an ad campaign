@@ -1,0 +1,9 @@
+Q.5  Determine the day of the week when most users register on Instagram. Provide insights on when to schedule an ad campaign.
+
+Answer : 
+        select dayname(created_at) as the_day_of_registration,
+               count(*) as total_number_of_registered_people
+               from users
+               group by the_day_of_registration
+               order by total_number_of_registered_people desc
+               limit 3;
