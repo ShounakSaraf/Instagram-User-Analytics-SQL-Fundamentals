@@ -1,0 +1,17 @@
+Q.3  Determine the winner of the contest and provide their details to the team
+
+Answer: 
+          select
+    users.id as user_id,
+    username,
+    photos.id AS photo_id,
+    photos.image_url,
+    COUNT(*) AS total_likes_count
+    from photos
+    inner join likes
+        on photos.id = likes.photo_id
+    inner join users
+        on users.id = photos.user_id
+    group by photos.id
+    order by total_likes_count desc  ;
+
