@@ -1,0 +1,13 @@
+Q.4  Identify and suggest the top five most commonly used hashtags on the platform
+
+Answer : 
+        select
+              t.id AS tag_id,
+              t.tag_name,
+              COUNT(*) as count_of_tags
+              from tags as t
+              join photo_tags
+              on t.id = photo_tags.tag_id
+              group by t.id
+              order by count_of_tags desc
+              limit 5;
