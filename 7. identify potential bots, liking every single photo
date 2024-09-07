@@ -1,0 +1,12 @@
+Q.7  Identify users (potential bots) who have liked every single photo on the site, as this is not typically possible for a normal user.
+
+Answer :    
+           select u.id as user_id,
+                 u.username,
+                 count(*) as total_likes_by_a_user
+                 from users as u 
+                 join likes
+                 on u.id = likes.user_id
+                 group by u.id
+                 having total_likes_by_a_user = (
+                 select count(*) from photos);
