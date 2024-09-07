@@ -1,0 +1,8 @@
+Q.2  Identify users who have never posted a single photo on Instagram
+
+Answer :
+         select u.id, u.username 
+                  from users as u
+                  left join photos as p
+                  on u.id = p.user_id
+                 where p.user_id is null;
