@@ -1,0 +1,15 @@
+Q.6  Calculate the average number of posts per user on Instagram
+
+Answer : 
+        Part 1 :- No. of posts per user on Instagram
+
+        Answer 1 : 
+                        SELECT 
+                        ( select count(*) from photos ) / (select count(*) from users) as avg;
+
+
+        Part 2 :- Provide the total number of photos on Instagram divided by the total number of users
+
+        Answer 2 : 
+                        SELECT
+                              ( select count(*) from photos ) / (select count(*) from users);
